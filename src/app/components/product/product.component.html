@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6" style="margin-top: 70px;">
+
+
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label col-form-label-sm">Product ID</label>
+                <div class="col-sm-6">
+                    <input type="text" [(ngModel)]="prodlist.prodid" class="form-control form-control-sm row-3"
+                        id="email" name="email" autocomplete="off" required="required">
+
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label col-form-label-sm">Product Name</label>
+                <div class="col-sm-6">
+                    <input type="text" [(ngModel)]="prodlist.proddescr" class="form-control form-control-sm row-3"
+                        id="email" name="email" autocomplete="off" required="required">
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="onCreateorUpdateclick()">{{mode}}</button>
+                    <button   class="btn btn-outline-warning my-2 my-sm-0" type="submit" style="margin-left: 5px;" (click)="onClearclick()">Clear</button>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+        <div class="col-md-6" style="margin-top: 50px;">
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product ID</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let subLst of details ;let indexOfelement=index;">
+
+
+                            <td>{{subLst.prodid}}</td>
+                            <td>{{subLst.proddescr}}</td>
+                            <td>
+                                <i class="fa fa-eye" style="color: blue; cursor: pointer;" (click)="onEdit(1,subLst)"
+                                    aria-hidden="true"></i>
+
+                            </td>
+                            <td><i class="fa fa-trash-o" style="color: red; cursor: pointer;" (click)="onEdit(2,subLst)"
+                                data-toggle="modal" data-target="#exampleModal" aria-hidden="true"></i>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Item</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         Are you sure want to delete?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>

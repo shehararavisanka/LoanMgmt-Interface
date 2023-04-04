@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+
+<div class="container">
+
+    <br><br>
+    <h3>All Users List</h3>
+    <div class="row">
+         
+        <div class="col-md-12" style="margin-top: 50px;">
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">User ID</th>
+                            <th scope="col"> User Name</th>
+                            <th scope="col"> Email</th>
+                            <th scope="col">Loan Amount</th>
+                            <th scope="col">Installment</th>
+                            <th scope="col"> Used Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let subLst of details ;let indexOfelement=index;">
+
+
+                            <td>{{subLst. id}}</td>
+                            <td>{{subLst. fullname}}</td>
+                            <td>{{subLst. email}}</td>
+                            <td>{{subLst. loanbalance}}</td>
+                            <td>{{subLst. installments}}</td>
+                            <td>{{subLst. usedamount}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+ 

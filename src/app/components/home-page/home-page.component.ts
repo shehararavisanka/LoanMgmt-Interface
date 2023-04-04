@@ -37,10 +37,10 @@ export class HomePageComponent {
         this.ret=ret;
 
         if(ret){ 
-          if(this.ret.passowrd==this.password && this.ret.isadmin==1){
+          if(this.ret.passowrd==this.password.toString() && this.ret.isadmin=="1"){
                  this.tost.success("Successfully Login!"); 
                 this.router.navigate(['/dashboard'])
-          }else if(this.ret.isadmin==0){
+          }else if(this.ret.isadmin!="1"){
             this.tost.error("You are not authorized to login");
           }else{
             this.tost.error("Password Incorrect");

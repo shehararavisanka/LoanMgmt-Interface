@@ -97,7 +97,7 @@ export class InventoryComponent {
       this.tost.warning("product Name cannot empty");
     }else if (this.invlist.brandname == "") {
       this.tost.warning("Brand Name cannot empty");
-    } else if (this.invlist.quantity >0) {
+    } else if (this.invlist.quantity ==0) {
       this.tost.warning("Quantity must greater than 0");
     }  else {
 

@@ -16,6 +16,8 @@ import { InventoryComponent } from './components/inventory/inventory.component';
 import { BrandsComponent } from './components/brands/brands.component'; 
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AllusersComponent } from './components/reports/allusers/allusers.component';
+import { LowinventoryComponent } from './components/reports/lowinventory/lowinventory.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ProductComponent,
     CategoriesComponent,
     InventoryComponent,
-    BrandsComponent
+    BrandsComponent,
+    AllusersComponent,
+    LowinventoryComponent
   ],
   imports: [
     BrowserModule,

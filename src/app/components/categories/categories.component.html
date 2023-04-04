@@ -11,16 +11,7 @@
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label col-form-label-sm">Categories ID</label>
                 <div class="col-sm-6">
-                    <input type="text" [(ngModel)]=" Catelist.Cateid" class="form-control form-control-sm row-3"
-                        id="email" name="email" autocomplete="off" required="required">
-
-                </div>
-
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-4 col-form-label col-form-label-sm">Categories Name</label>
-                <div class="col-sm-6">
-                    <input type="text" [(ngModel)]=" Catelist.Catedescr" class="form-control form-control-sm row-3"
+                    <input type="text" [(ngModel)]=" Catelist.id" class="form-control form-control-sm row-3" disabled
                         id="email" name="email" autocomplete="off" required="required">
 
                 </div>
@@ -29,15 +20,27 @@
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label col-form-label-sm">Product Name</label>
                 <div class="col-sm-6">
-                    <select class="form-control form-control-sm " [(ngModel)]="Catelist.ProdId" required="required"
+                    <select class="form-control form-control-sm " [(ngModel)]="Catelist.productname" required="required"
                         > 
+                        <option ></option>
                         <option *ngFor="let titleLst of ProdDetails">
-                            <span value="titleLst.ProdId">{{titleLst.proddescr}} </span>
+                            <span value="titleLst.productname">{{titleLst.productname}} </span>
                         </option>
                     </select>
                 </div>
 
             </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label col-form-label-sm">Categories Name</label>
+                <div class="col-sm-6">
+                    <input type="text" [(ngModel)]=" Catelist.categoryname" class="form-control form-control-sm row-3"
+                        id="email" name="email" autocomplete="off" required="required">
+
+                </div>
+
+            </div>
+          
             <div class="row">
                 <div class="col-md-6">
 
@@ -69,9 +72,10 @@
                         <tr *ngFor="let subLst of details ;let indexOfelement=index;">
 
 
-                            <td>{{subLst. Cateid}}</td>
-                            <td>{{subLst. ProdDesc}}</td>
-                            <td>{{subLst. Catedescr}}</td>
+                            <td>{{subLst.id}}</td>
+                            <td>{{subLst.productname}}</td>
+                            <td>{{subLst.categoryname}}</td>
+                        
                             <td>
                                 <i class="fa fa-eye" style="color: blue; cursor: pointer;" (click)="onEdit(1,subLst)"
                                     aria-hidden="true"></i>
@@ -111,7 +115,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="ondelete()">Yes</button>
         </div>
       </div>
     </div>

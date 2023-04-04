@@ -15,6 +15,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { BrandsComponent } from './components/brands/brands.component'; 
 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,7 @@ import { BrandsComponent } from './components/brands/brands.component';
   imports: [
     BrowserModule,
     AppRoutingModule,BrowserAnimationsModule,
-    FormsModule ,ToastrModule.forRoot()
+    FormsModule ,ToastrModule.forRoot(),HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
